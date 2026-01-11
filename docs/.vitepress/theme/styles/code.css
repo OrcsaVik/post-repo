@@ -1,0 +1,80 @@
+/* macOS 风格小圆点 */
+.vp-doc div[class*='language-'],
+.vp-code-group,
+.vp-code-block-title {
+  --code-red: #ff5f56;
+  --code-yellow: #ffbd2e;
+  --code-green: #27c93f;
+}
+
+/* 通用代码块背景 */
+.vp-doc pre code {
+  display: block;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+}
+
+/* 浅色模式 */
+.vp-doc[data-theme='light'] pre code {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* 暗色模式 */
+.vp-doc[data-theme='dark'] pre code {
+  background-color: #1e1e1e;
+  /* 深色背景 */
+  color: #f5f5f5;
+  /* 浅色文字 */
+}
+
+/* 单文件代码块 macOS 圆点 */
+.vp-doc *:not(.vp-code-block-title):not(.blocks)>div[class*='language-'],
+.vp-doc .vp-code-block-title-bar {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.vp-doc *:not(.vp-code-block-title):not(.blocks)>div[class*='language-']::before,
+.vp-doc .vp-code-block-title-bar::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--code-red);
+  box-shadow:
+    0.8rem 0 0 var(--code-yellow),
+    1.6rem 0 0 var(--code-green);
+}
+
+/* 多文件代码块 tab 圆点 */
+.vp-code-group .tabs::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--code-red);
+  box-shadow:
+    0.8rem 0 var(--code-yellow),
+    1.6rem 0 var(--code-green);
+}
+
+/* 行号 wrapper（保持主题适配） */
+.vp-doc .line-numbers-wrapper {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  /* light mode line */
+}
+
+.vp-doc[data-theme='dark'] .line-numbers-wrapper {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  /* dark mode line */
+}

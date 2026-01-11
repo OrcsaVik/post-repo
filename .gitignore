@@ -34,6 +34,10 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
+.idea
+
+
+.github/
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
@@ -107,6 +111,7 @@ dist
 # Docusaurus cache and generated files
 .docusaurus
 
+**/cache/
 # Serverless directories
 .serverless/
 
@@ -121,10 +126,11 @@ dist
 
 # TernJS port file
 .tern-port
-
+.vscode
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+package-lock.json
 # yarn v3
 .pnp.*
 .yarn/*
