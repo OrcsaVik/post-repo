@@ -70,6 +70,7 @@ export default defineConfig({
       { text: '系统设计', link: '/system-design/' },
       // Ensure folder exists: docs/open-source/index.md
       { text: '开源项目', link: '/open-source/' },
+      { text: '推荐阅读', link: '/books-love/' },
     ],
 
     socialLinks: [
