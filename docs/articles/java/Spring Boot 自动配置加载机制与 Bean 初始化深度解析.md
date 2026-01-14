@@ -2,11 +2,11 @@
 
 ------
 
-## title: Spring Boot 自动配置加载机制与 Bean 初始化深度解析
+# Spring Boot 自动配置加载机制与 Bean 初始化深度解析
 
 在 Spring Boot 的工程实践中，自动配置（Auto-Configuration）既是开发效率的源泉，也是隐藏 Bug 的深水区。本篇文档旨在复盘 `HelloService` 自动配置案例中暴露的构造器冲突、Bean 覆盖及生命周期陷阱。
 
-### 1. 核心难点：@Component 与自动配置的“生存空间”冲突
+## 1. 核心难点：@Component 与自动配置的“生存空间”冲突
 
 在 Starter 开发中，最大的隐患在于**定位模糊**。
 
@@ -16,7 +16,7 @@
 
 ------
 
-### 2. Bug 预警：构造器冲突导致的 final 字段未初始化
+## 2. Bug 预警：构造器冲突导致的 final 字段未初始化
 
 当你在 `HelloService` 中混合使用 Lombok 的 `@RequiredArgsConstructor` 和手动定义的无参构造器时，会触发语法安全边界。
 
@@ -26,7 +26,7 @@
 
 ------
 
-### 3. 消灭特殊情况：三种注入实现方式比较
+## 3. 消灭特殊情况：三种注入实现方式比较
 
 针对 `HelloService` 的初始化逻辑，对比以下方案：
 
@@ -40,7 +40,7 @@
 
 ------
 
-### 4. 复杂度分析：自动配置的“黑盒”过滤逻辑
+## 4. 复杂度分析：自动配置的“黑盒”过滤逻辑
 
 Spring Boot 并不是盲目加载配置，它遵循严格的漏斗式过滤模型：
 
@@ -53,9 +53,8 @@ Spring Boot 并不是盲目加载配置，它遵循严格的漏斗式过滤模�
 
 不要在 @Bean 方法内部返回 null。
 
-Java
 
-```
+```Java
 // ❌ 坏味道：返回 null 会导致依赖该 Bean 的组件抛出 NoSuchBeanDefinitionException
 if (Boolean.TRUE.equals(props.getEnable())) { return new HelloService(); }
 return null; 
@@ -77,6 +76,3 @@ public HelloService helloService() { ... }
 
 ------
 
-下一步建议：
-
-针对 Spring Boot 3.x 的变动，是否需要我为你生成一份标准化的 META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports 模板以及对应的 AutoConfiguration 规范代码？

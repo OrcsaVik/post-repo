@@ -4,10 +4,10 @@ import { GenerateSidebarOption } from 'vitepress-sidebar';
 const commonOptions = {
   documentRootPath: 'docs', // Important: Tells the plugin where your physical files are
   collapsed: true,
-  collapseDepth: 3,
+  collapseDepth: 2,
   hyphenToSpace: true,
   underscoreToSpace: true,
-  capitalizeFirst: false,
+  capitalizeFirst: true,
   useTitleFromFrontmatter: true,
   useFolderTitleFromIndexFile: true,
   useFolderLinkFromIndexFile: true,
@@ -52,5 +52,12 @@ export const sidebarOptions: GenerateSidebarOption[] = [
     scanStartPath: 'open-source',
     resolvePath: '/open-source/',
     rootGroupText: '开源项目',
+  },
+  // === Articles: Algo ===
+  {
+    ...commonOptions,
+    scanStartPath: 'articles/algo',
+    resolvePath: '/articles/algo/',
+    rootGroupText: '算法专栏',
   },
 ];

@@ -2,7 +2,9 @@
 title: SkyWalking 告警规则配置：从指标监控到主动响应
 ---
 
-在完成 SkyWalking 镜像构建与指标观察后，手动盯着控制台并非长久之计。通过配置 `alarm-settings.yml`，你可以让系统在性能指标异常（如成功率下降）时，自动通过 Webhook 推送通知至钉钉、企业微信或自定义 API。
+# SkyWalking 镜像构建与指标观察
+
+手动盯着控制台并非长久之计。通过配置 `alarm-settings.yml`，你可以让系统在性能指标异常（如成功率下降）时，自动通过 Webhook 推送通知至钉钉、企业微信或自定义 API。
 
 ### 1. 核心配置文件定位
 SkyWalking 的所有告警逻辑均由后端 OAP Server 管理，配置文件位于：

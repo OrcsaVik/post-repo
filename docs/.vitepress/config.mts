@@ -6,14 +6,14 @@ import { sidebarArticles } from './sidebar/articles'
 import { generateSidebar } from 'vitepress-sidebar'
 import { sidebarOptions } from './sidebar/options'
 export default defineConfig({
-  // base: '/docs',   // ← change to '/your-repo-name/' only if deploying to GitHub Pages subdirectory
+  // base: '/OrcsaVik.github.io/',   // ← change to '/your-repo-name/' only if deploying to GitHub Pages subdirectory
   lang: 'zh-CN',
   title: "OrcsaVik",
   appearance: 'dark', // Forced Dark Mode
   // srcDir: 'docs',
 
   head: [
-    ['link', { rel: 'icon', href: '/572.png' }], // Note: Removed /public, assume 572.png is in docs/public/
+    ['link', { rel: 'icon', href: '/logo.png' }], // Note: Removed /public, assume 572.png is in docs/public/
   ],
 
   markdown: {
@@ -64,6 +64,7 @@ export default defineConfig({
           { text: 'Java', link: '/articles/java/' },
           { text: 'Python', link: '/articles/python/' },
           { text: 'LLM', link: '/articles/llm/' },
+          { text: '算法', link: '/articles/algo/' },
         ],
       },
       // Ensure folder exists: docs/system-design/index.md
@@ -74,7 +75,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/OrcsaVik' },
       {
         icon: {
           svg: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.758v8.035c-.054 1.51-.578 2.769-1.574 3.773-.995 1.004-2.249 1.524-3.758 1.56H5.333c-1.51-.054-2.769-.578-3.773-1.574-1.004-.995-1.524-2.249-1.56-3.758V9.985c.054-1.51.578-2.769 1.574-3.773.995-1.004 2.249-1.524 3.758-1.56h.854l-2.043-2.315a.835.835 0 0 1 .08-1.166.848.848 0 0 1 1.168.083l2.457 2.783h7.904l2.457-2.783a.848.848 0 0 1 1.168-.083.836.836 0 0 1 .08 1.166l-2.043 2.315Zm-2.586 7.42a1.867 1.867 0 1 0 0 3.734 1.867 1.867 0 0 0 0-3.734Zm-6.454 0a1.867 1.867 0 1 0 0 3.734 1.867 1.867 0 0 0 0-3.734Z" fill="currentColor"/></svg>'

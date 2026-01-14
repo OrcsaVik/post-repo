@@ -13,7 +13,7 @@ hero:
       link: /java/
     - theme: alt
       text: GitHub
-      link: https://github.com/OrcsaVikd
+      link: https://github.com/OrcsaVik
 
 
     # This adds the large logo on the right side like the screenshot

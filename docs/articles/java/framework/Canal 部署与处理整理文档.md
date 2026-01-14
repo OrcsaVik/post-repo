@@ -15,11 +15,11 @@ title: Canal 深入理解
 
   ### 主流 CDC 组件
 
-  | 组件               | 特点                                                         |
-  | ------------------ | ------------------------------------------------------------ |
-  | **Canal**          | 阿里开源，基于数据库增量日志解析，提供增量数据订阅与消费，主要支持 MySQL |
-  | **Databus**        | LinkedIn 分布式变更抓取系统，官方支持 Oracle，MySQL 仅通过 OpenReplicator Demo |
-  | **Mysql-Streamer** | Yelp，Python 数据管道                                        |
+  | 组件               | 特点                                                                                 |
+  | ------------------ | ------------------------------------------------------------------------------------ |
+  | **Canal**          | 阿里开源，基于数据库增量日志解析，提供增量数据订阅与消费，主要支持 MySQL             |
+  | **Databus**        | LinkedIn 分布式变更抓取系统，官方支持 Oracle，MySQL 仅通过 OpenReplicator Demo       |
+  | **Mysql-Streamer** | Yelp，Python 数据管道                                                                |
   | **Debezium**       | RedHat 开源，支持 MySQL、MongoDB、PostgreSQL，Snapshot Mode 可统一处理全量与增量数据 |
 
   ------
